@@ -1,14 +1,28 @@
-group 'pl.brightinventions'
-version '1.0-SNAPSHOT'
+buildscript {
+    ext.kotlin_version = '1.1.2'
 
-apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version-2"
+    }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+allprojects {
+    group 'pl.brightinventions'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
 }
